@@ -1,0 +1,48 @@
+<?php
+//echo 'hello success';
+$customer = Mage::getSingleton('customer/session')->getCustomer(); 
+    
+$Firstname	=  $customer->getFirstname();     
+$Lastname	=  $customer->getLastname();  
+    
+?>
+<div class="page-title">
+    <h1><?php echo $this->__('Your order has been received.') ?></h1>
+</div>
+<h2 class="sub-title"><?php echo "$Firstname $Lastname"; ?></h2>
+
+
+<h2 class="sub-title"><?php echo $this->__('Thank you for your purchase!') ?></h2>
+
+<?php
+//getting last order id
+$lastOrderId 	= Mage::getSingleton('checkout/session')->getLastRealOrderId();
+$yourorder		= $this->__('Your order # is: ');
+$printorder		= $this->__('Print Order');
+
+
+//$lastOrderId = Mage::getSingleton('checkout/session')->getLastOrderId();
+$ordercustomID = Mage::getSingleton('checkout/type_onepage')->getCheckout()->getLastOrderId(); 
+
+$url	= Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);
+$view	= 'sales/order/view/order_id/';
+$print	= 'sales/order/print/order_id/';
+
+
+?>
+
+<h2><p><?php// echo $yourorder. $lastOrderId ?></p></h2>
+
+<?php echo $yourorder ?>
+<?php echo "<a href='$url$view$ordercustomID'>$lastOrderId</a>"; ?>
+
+<p></p>
+
+<p><?php echo $this->__('You will receive an order confirmation email with details of your order and a link to track its progress.') ?></p>
+
+
+
+
+<p><?php //echo "<a href='$url$view$ordercustomID'>View your order</a>"; ?></p>
+
+<?php echo "<a target=\"_blank\" href='$url$print$ordercustomID'>$printorder</a>"; ?>

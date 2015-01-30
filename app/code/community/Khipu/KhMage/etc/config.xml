@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Khipu_KhMage>
+			<version>1.3.0</version>
+		</Khipu_KhMage>
+	</modules>
+
+
+	<!-- configurando routes IndexController o PaymentController MVC PHP (Model View Controller)-->
+	<frontend>
+		<routers>
+			<khmage>
+				<use>standard</use>
+				<args>
+					<module>Khipu_KhMage</module>
+					<frontName>khmage</frontName>
+				</args>
+			</khmage>
+		</routers>
+		<!-- configurando routes IndexController o PaymentController MVC PHP (Model View Controller)-->
+
+
+		<!-- Agregando files para la traduccion de modulo-->
+		<translate>
+			<modules>
+				<Khipu_KhMage>
+					<files>
+						<default>Khipu_KhMage.csv</default>
+					</files>
+				</Khipu_KhMage>
+			</modules>
+		</translate>
+		<!-- fin Agregando files para la traduccion de modulo-->
+
+
+		<!-- Agregando layout/block para ajustarlo a Magento MVC -->
+		<layout>
+			<updates>
+				<khmage>
+					<file>khmage.xml</file>
+				</khmage>
+			</updates>
+		</layout>
+		<!-- fin Agregando layout/block para ajustarlo a Magento MVC -->
+
+	</frontend>
+
+
+	<!-- ***************************************************************** -->
+
+
+	<!-- original codigo khipu -->
+	<global>
+		<blocks>
+			<khmage>
+				<class>Khipu_KhMage_Block</class>
+			</khmage>
+		</blocks>
+
+		<!-- crea ModelPaymentmethod -->
+		<models>
+			<khmage>
+				<class>Khipu_KhMage_Model</class>
+			</khmage>
+
+
+			<!-- fin crea ModelPaymentmethod -->
+
+			<!-- Rewritte Order para set status Complete para cuando la compra es exitosa -->
+			<sales>
+				<rewrite>
+					<order>Khipu_KhMage_Model_Sales_Order</order>
+				</rewrite>
+			</sales>
+			<!-- fin Rewritte Order para set status Complete para cuando la compra es exitosa -->
+
+
+		</models>
+
+		<!-- Magento lee a Khipu/KhMage/Helper/Api.php
+		devuelta del pago, para MVC responseAction() ubicado en
+		Khipu/KhMage/controllers/PaymentController.php> -->
+		<helpers>
+			<!-- originalmente mal declarado <mygateway>  -->
+			<khmage>
+				<class>Khipu_KhMage_Helper_Api</class>
+			</khmage>
+			<!-- originalmente mal declarado   </mygateway> -->
+		</helpers>
+		<!-- fin lectura de MVC responseAction()-->
+
+
+		<resources>
+			<khmage_setup>
+				<setup>
+					<module>Khipu_KhMage</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</khmage_setup>
+			<khmage_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</khmage_write>
+			<khmage_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</khmage_read>
+		</resources>
+	</global>
+
+
+	<default>
+		<payment>
+			<khmage>
+				<active>0</active>
+				<model>khmage/khmage</model>
+				<order_status>pending</order_status>
+				<title>Transferencia simplificada (khipu)</title>
+				<allowspecific>0</allowspecific>
+				<receiver_id>0</receiver_id>
+				<api_secret>123abc</api_secret>
+			</khmage>
+			<khmagemanual>
+				<active>0</active>
+				<model>khmage/khmagemanual</model>
+				<order_status>pending</order_status>
+				<title>Transferencia bancaria normal</title>
+				<allowspecific>0</allowspecific>
+				<receiver_id>0</receiver_id>
+				<api_secret>123abc</api_secret>
+			</khmagemanual>
+		</payment>
+	</default>
+
+
+	<!-- fin original codigo khipu -->
+
+
+</config>

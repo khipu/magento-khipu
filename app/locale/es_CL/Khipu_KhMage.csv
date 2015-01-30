@@ -1,0 +1,30 @@
+"Simplified bank transfer (khipu)", "Transferencia simplificada (khipu)"
+"Bank transfer", "Transferencia bancaria normal"
+"Continue", "Continuar"
+"Receiver ID", "ID de cobrador"
+"Secret key", "Llave secreta"
+"Starting the payment.", "Iniciando el proceso de pago."
+"Choose the bank to make the payment.", "Escoge el banco para realizar el pago."
+
+"Payment in khipu verification.", "Pago en verificación en khipu."
+"client declined the payment in khipu.", "El cliente declinó el pago en khipu."
+"Choose the bank to make the payment", "Escoja el banco para realizar el pago"
+"The payment process has started, please wait.", "El proceso de pago está comenzando, por favor espere unos segundos."
+"confirmAction: Can not change status to order:", "confirmAction: No se puede cambiar el estado del pedido:"
+"confirmAction: Valid order not found: ","confirmAction: Pedido válido no encontrado: "
+"khipu has confirmed the payment. Notification ID: ", "khipu ha confirmado el pago. ID Notificación: "
+"New order status", "Nuevo Status del Pedido"
+# Custom Success
+"Your order has been received.", "Su pedido ha sido recibido."
+"Thank you for your purchase!","Gracias por su compra!"
+"Your order # is: ","Su número de Pedido es: "
+"Print Order", "Imprima su Pedido"
+"You will receive an order confirmation email with details of your order and a link to track its progress.", "Recibirá un correo electrónico de confirmación de su Pedido con los detalles del mismo y un enlace para seguir todo el proceso."
+
+# default Failure
+"An error occurred in the process of payment","Un error ha ocurrido en el proceso de pago!"
+"Order #","Orden # "
+"Click <a href=""%s"">here</a> to continue shopping.","Click <a href=""%s"">aquí</a> para continuar comprando."
+
+# Redirect
+"You are being redirected to the secure site for payment khipu Chilean peso.", "Usted está siendo redirigido al sitio seguro de khipu para pago en peso chileno."

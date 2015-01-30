@@ -1,0 +1,12 @@
+<div class="page-title">
+    <h1><?php echo $this->__('Starting the payment.') ?></h1>
+</div>
+<div id="wait-msg""><?php echo $this->__('The payment process has started, please wait.')?></div>
+<div id="khipu-chrome-extension-div" style="display: none"></div>
+<script>
+    window.onload = function () {
+        KhipuLib.onLoad({
+            data: <?php echo $json ?>
+        })
+    }
+</script>

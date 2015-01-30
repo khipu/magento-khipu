@@ -1,0 +1,30 @@
+"Simplified bank transfer (khipu)", "Simplified bank transfer (khipu)"
+"Bank transfer", "Bank transfer"
+"Continue", "Continue"
+"Receiver ID", "Receiver ID"
+"Secret key", "Secret key"
+"Starting the payment.", "Starting the payment."
+"Choose the bank to make the payment.", "Choose the bank to make the payment."
+
+"Payment in khipu verification.", "Payment in khipu verification."
+"client declined the payment in khipu.", "client declined the payment in khipu."
+"Choose the bank to make the payment", "Choose the bank to make the payment"
+"The payment process has started, please wait.", "The payment process has started, please wait."
+"confirmAction: Can not change status to order:", "confirmAction: Can not change status to order:"
+"confirmAction: Valid order not found: ","confirmAction: Valid order not found: "
+"khipu has confirmed the payment. Notification ID: ", "khipu has confirmed the payment. Notification ID: "
+"New order status", "New order status"
+# Custom Success
+"Your order has been received.", "Your order has been received."
+"Thank you for your purchase!","Thank you for your purchase!"
+"Your order # is: ","Your order # is: "
+"Print Order", "Print Order""
+"You will receive an order confirmation email with details of your order and a link to track its progress.", "You will receive an order confirmation email with details of your order and a link to track its progress."
+
+# default Failure
+"An error occurred in the process of payment","An error occurred in the process of payment"
+"Order #","Order #"
+"Click <a href=""%s"">here</a> to continue shopping.","Click <a href=""%s"">here</a> to continue shopping."
+
+# Redirect
+"You are being redirected to the secure site for payment khipu Chilean peso.", "You are being redirected to the secure site for payment khipu Chilean peso."

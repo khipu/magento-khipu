@@ -1,0 +1,15 @@
+<div class="page-title">
+    <h1><?php echo $this->__('Choose the bank to make the payment.') ?></h1>
+</div>
+<form method="POST" action="<?php echo $action ?>">
+    <input type="hidden" id="khmage_order_id" name="khmage_order_id" value="<?php echo $orderId ?>">
+
+    <div class="input-box">
+        <?php echo $bankSelector; ?>
+    </div>
+    <br>
+    <br>
+    <button type="submit" title="Place Order" class="button btn-checkout">
+        <span><span><?php echo $this->__('Continue') ?></span></span>
+    </button>
+</form>
