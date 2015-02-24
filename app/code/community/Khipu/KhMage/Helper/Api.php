@@ -13,7 +13,7 @@ class Khipu_KhMage_Helper_Api extends Mage_Core_Helper_Abstract
         require_once "lib-khipu/src/Khipu.php";
         $Khipu = new Khipu();
         $Khipu->authenticate(Mage::getStoreConfig('payment/khmage/receiver_id'), Mage::getStoreConfig('payment/khmage/api_secret'));
-        $Khipu->setAgent('khmage-1.3.0');
+        $Khipu->setAgent('khmage-1.5.0;;'.Mage::app()->getStore()->getHomeUrl().';;'.Mage::app()->getStore()->getName());
         $service = $Khipu->loadService('ReceiverBanks');
         return $service->consult();
     }
@@ -26,7 +26,7 @@ class Khipu_KhMage_Helper_Api extends Mage_Core_Helper_Abstract
 
         $Khipu = new Khipu();
         $Khipu->authenticate(Mage::getStoreConfig('payment/khmage/receiver_id'), Mage::getStoreConfig('payment/khmage/api_secret'));
-        $Khipu->setAgent('khmage-1.3.0');
+        $Khipu->setAgent('khmage-1.5.0;;'.Mage::app()->getStore()->getHomeUrl().';;'.Mage::app()->getStore()->getName());
         $create_page_service = $Khipu->loadService('CreatePaymentURL');
 
         $return_url = Mage::getUrl('khmage/payment/response', array('_secure' => true)) . '?transaction_id=' . $orderId;
@@ -54,7 +54,7 @@ class Khipu_KhMage_Helper_Api extends Mage_Core_Helper_Abstract
 
         $Khipu = new Khipu();
         $Khipu->authenticate(Mage::getStoreConfig('payment/khmagemanual/receiver_id'), Mage::getStoreConfig('payment/khmagemanual/api_secret'));
-        $Khipu->setAgent('khmage-1.3.0');
+        $Khipu->setAgent('khmage-1.5.0;;'.Mage::app()->getStore()->getHomeUrl().';;'.Mage::app()->getStore()->getName());
         $create_page_service = $Khipu->loadService('CreatePaymentURL');
 
         $return_url = Mage::getUrl('khmage/payment/response', array('_secure' => true)) . '?transaction_id=' . $orderId;
@@ -115,7 +115,7 @@ class Khipu_KhMage_Helper_Api extends Mage_Core_Helper_Abstract
         $Khipu = new Khipu();
         $post = array_map('stripslashes', $_POST);
         $Khipu->authenticate(Mage::getStoreConfig("payment/$methodname/receiver_id"), Mage::getStoreConfig("payment/$methodname/api_secret"));
-        $Khipu->setAgent('magento-1.1.0');
+        $Khipu->setAgent('khmage-1.5.0;;'.Mage::app()->getStore()->getHomeUrl().';;'.Mage::app()->getStore()->getName());
         $service = $Khipu->loadService('GetPaymentNotification');
         $service->setDataFromPost();
         $response = json_decode($service->consult());
@@ -134,7 +134,7 @@ class Khipu_KhMage_Helper_Api extends Mage_Core_Helper_Abstract
         $Khipu = new Khipu();
         $_POST = array_map('stripslashes', $_POST);
         $Khipu->authenticate(Mage::getStoreConfig("payment/$methodname/receiver_id"), Mage::getStoreConfig("payment/$methodname/api_secret"));
-        $Khipu->setAgent('khmage-1.3.0');
+        $Khipu->setAgent('khmage-1.5.0;;'.Mage::app()->getStore()->getHomeUrl().';;'.Mage::app()->getStore()->getName());
         $create_page_service = $Khipu->loadService('VerifyPaymentNotification');
         $create_page_service->setDataFromPost();
         if ($_POST['receiver_id'] != Mage::getStoreConfig("payment/$methodname/receiver_id")) {

@@ -75,6 +75,15 @@ class Khipu_KhMage_PaymentController extends Mage_Core_Controller_Front_Action
 
     }
 
+    function base64url_decode_uncompress($data) {
+        return gzuncompress(base64_decode(str_pad(strtr($data, '-_', '+/'), strlen($data) % 4, '=', STR_PAD_RIGHT)));
+    }
+
+
+    function base64url_encode_compress($data) {
+        return rtrim(strtr(base64_encode(gzcompress($data)), '+/', '-_'), '=');
+    }
+
     public function generateurlAction()
     {
         $session = Mage::getSingleton('checkout/session');
@@ -94,7 +103,7 @@ class Khipu_KhMage_PaymentController extends Mage_Core_Controller_Front_Action
         if (!$jsonString) {
             $this->_redirect('khmage/payment/cancel');
         } else {
-            $this->_redirect('khmage/payment/dopay?json=' . urlencode($jsonString));
+            $this->_redirect('khmage/payment/dopay?json=' . $this->base64url_encode_compress($jsonString));
         }
 
     }
@@ -106,9 +115,7 @@ class Khipu_KhMage_PaymentController extends Mage_Core_Controller_Front_Action
             $this->_redirect('khmage/payment/cancel');
             return;
         }
-        $json = $this->getRequest()->getParam("json");
-
-        $json = substr($json, 0, strlen($json) - 1);
+        $json = $this->base64url_decode_uncompress($this->getRequest()->getParam("json"));
 
         $this->loadLayout();
         $layout = $this->getLayout();
