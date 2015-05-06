@@ -120,7 +120,7 @@
 				<active>0</active>
 				<model>khmage/khmage</model>
 				<order_status>pending</order_status>
-				<title>Transferencia simplificada (khipu)</title>
+				<title>khipu - Transferencia simplificada</title>
 				<allowspecific>0</allowspecific>
 				<receiver_id>0</receiver_id>
 				<api_secret>123abc</api_secret>
@@ -129,7 +129,7 @@
 				<active>0</active>
 				<model>khmage/khmagemanual</model>
 				<order_status>pending</order_status>
-				<title>Transferencia bancaria normal</title>
+				<title>Transferencia normal</title>
 				<allowspecific>0</allowspecific>
 				<receiver_id>0</receiver_id>
 				<api_secret>123abc</api_secret>

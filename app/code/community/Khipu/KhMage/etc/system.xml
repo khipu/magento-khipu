@@ -69,7 +69,7 @@
 					</fields>
 				</khmage>
 				<khmagemanual translate="label" module="khmage">
-					<label>khipu - Transferencia normal</label>
+					<label>Transferencia normal</label>
 					<sort_order>2</sort_order>
 					<show_in_default>1</show_in_default>
 					<show_in_website>1</show_in_website>
